@@ -6,7 +6,7 @@ import useLocalStorage from "./useLocalStorage";
 function useExtra() {
 	const dispatch = useDispatch();
 	const { theme, fakeImageLoading } = useSelector(({ extra }) => extra);
-	const { saveItemToLocalStorage } = useLocalStorage();
+	const { saveItemToLocalStorage, getItemFromLocalStorage } = useLocalStorage();
 
 	const toggleFakeLoading = () =>
 		dispatch(setValue({ key: "fakeImageLoading", value: !fakeImageLoading }));
@@ -23,12 +23,17 @@ function useExtra() {
 		saveItemToLocalStorage("themeMode", value);
 	};
 
+	const initializeTheme = () => {
+		setThemeMode(getItemFromLocalStorage("themeMode"));
+	};
+
 	return {
 		theme,
 		fakeImageLoading,
 		toggleFakeLoading,
 		toggleThemeMode,
 		setThemeMode,
+		initializeTheme,
 	};
 }
 

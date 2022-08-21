@@ -1,18 +1,12 @@
-import { useLayoutEffect } from "react";
-
 import IconButton from "@mui/material/IconButton";
 import Badge from '@mui/material/Badge';
 
 import LightBulbIcon from "../utils/icons/LightBulb";
 
 import useExtra from "../../hooks/useExtra";
-import useLocalStorage from '../../hooks/useLocalStorage';
 
 function ThemeSwitch() {
-    const { theme, toggleThemeMode, setThemeMode } = useExtra();
-    const { getItemFromLocalStorage } = useLocalStorage();
-
-    useLayoutEffect(() => { setThemeMode(getItemFromLocalStorage('themeMode')); }, [])
+    const { theme, toggleThemeMode } = useExtra();
 
     return (
         <IconButton
