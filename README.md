@@ -13,7 +13,7 @@ Live link [http://dat-assessment.herokuapp.com/](http://dat-assessment.herokuapp
 ## Start
 
 ```cmd
-npm insall
+npm install
 ```
 
 ```cmd
