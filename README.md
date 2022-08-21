@@ -29,7 +29,7 @@ npm start
   - `Component/`
     - `Styled.js`
     - `...others.jsx`
-- @mui uses @motion for styling which provides built-in support for sass as JavaScript objects
+- @mui uses @emotion for styling which provides built-in support for sass as JavaScript objects
 - No testing made due to shortage of time
 
 ## Breakdown
