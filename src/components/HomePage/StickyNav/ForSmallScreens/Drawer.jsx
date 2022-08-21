@@ -1,11 +1,13 @@
 import MuiDrawer, { DrawerProps } from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
+import Stack from '@mui/material/Stack';
 import Button from "@mui/material/Button";
 
 import { alpha } from "@mui/material/styles";
 
 import Arrow from '../../../utils/icons/Arrow';
 import ExtraFeatures from '../../../ExtraFeatures';
+import JSONCheckout from "../../../Cart/JSONCheckout";
 
 import useMediaQuery from "../../../../hooks/useMediaQuery";
 
@@ -32,7 +34,10 @@ function Drawer(props) {
             }}
             onClose={onClose}
             {...rest}>
-            <Box width={sm ? 500 : '100vw'} my={2} px={2}>
+            <Stack
+                width={sm ? 500 : '100vw'}
+                px={2}
+                height="100%">
                 <Box display="flex" m={2}>
                     <ExtraFeatures />
                     <Button
@@ -43,8 +48,9 @@ function Drawer(props) {
                         <Arrow />
                     </Button>
                 </Box>
-                {children}
-            </Box>
+                <Box flexGrow={1} overflow="auto">{children}</Box>
+                <JSONCheckout sx={{ mb: 1 }} />
+            </Stack>
         </MuiDrawer>
     );
 }

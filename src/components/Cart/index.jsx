@@ -26,7 +26,6 @@ function Cart(props) {
             ) : (
                 <Stack gap={2} my={2}>
                     {cart.map((c, key) => <EachCartItem key={key} item={c} />)}
-                    <JSONCheckout />
                 </Stack>
             )}
         </Box>

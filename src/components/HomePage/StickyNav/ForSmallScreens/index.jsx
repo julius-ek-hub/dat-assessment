@@ -35,25 +35,22 @@ function ForSmallScreens() {
             </IconButton>
             <Drawer
                 open={open}
+                sx={{ display: 'flex' }}
                 onClose={() => setOpen(false)}>
                 <MenuItem onClick={scrollers.scrollToTop.bind({})} >Home</MenuItem>
                 <MenuItem onClick={scrollers.scrollToRegister.bind({})} >Form</MenuItem>
                 <MenuItem onClick={scrollers.scrollToMenu.bind({})} >Menu</MenuItem>
+                <MenuItem onClick={() => setOpen(false)} >Login</MenuItem>
+                <Divider sx={{ mt: 1 }} />
                 <Accordion elevation={0}>
                     <AccordionSummery>
                         <CatBadge /> <Typography variant="h6" ml={1.5}>Cart</Typography>
                     </AccordionSummery>
                     <AccordionDetails>
-                        <Box>
-                            <Cart />
-                        </Box>
+                        <Cart />
                     </AccordionDetails>
                 </Accordion>
                 <Divider />
-                <Button
-                    onClick={() => setOpen(false)}
-                    variant="contained" sx={{ mx: 1.6, mt: 1 }}
-                    size="large">Login</Button>
             </Drawer>
 
         </>
