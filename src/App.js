@@ -3,11 +3,8 @@ import { useLayoutEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import StickyNav from "./components/StickyNav";
-import Header from "./components/Header";
-import Menu from "./components/Menu";
-import Register from "./components/Register";
-import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
+import HomePage from "./components/HomePage";
 
 import theme from "./theme";
 
@@ -32,11 +29,9 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme(mode)}>
-			<StickyNav />
-			<Header />
-			<Register />
-			<Menu />
-			<Footer />
+			<ErrorBoundary>
+				<HomePage />
+			</ErrorBoundary>
 			<CssBaseline enableColorScheme />
 		</ThemeProvider>
 	);

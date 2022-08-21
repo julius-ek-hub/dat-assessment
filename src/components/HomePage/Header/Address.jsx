@@ -4,10 +4,10 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 import { StyledAddressCard } from './Styled';
-import Image from "../utils/Image";
+import Image from "../../utils/Image";
 
-import useMediaQuery from "../../hooks/useMediaQuery";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import useLocalStorage from "../../../hooks/useLocalStorage";
 
 function Address() {
     const { md } = useMediaQuery();

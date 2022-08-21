@@ -2,7 +2,7 @@ import Button, { ButtonProps } from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
 import CatDropdown from "./CartDropDown";
-import ExtraFeatures from "../../ExtraFeatures";
+import ExtraFeatures from "../../../ExtraFeatures";
 
 import * as scrollers from "../scollers";
 

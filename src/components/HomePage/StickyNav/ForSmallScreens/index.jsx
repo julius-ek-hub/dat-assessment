@@ -11,12 +11,12 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Badge from "@mui/material/Badge";
 
-import MenuIcon from "../../utils/icons/Menu";
-import Cart from "../../Cart";
-import CatBadge from "../../Cart/CartBadge";
+import MenuIcon from "../../../utils/icons/Menu";
+import Cart from "../../../Cart";
+import CatBadge from "../../../Cart/CartBadge";
 import Drawer from "./Drawer";
 
-import useCart from "../../../hooks/useCart";
+import useCart from "../../../../hooks/useCart";
 
 import * as scrollers from "../scollers";
 

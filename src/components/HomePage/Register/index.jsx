@@ -1,11 +1,11 @@
 import Typography from "@mui/material/Typography";
 
-import WithWrapper from "../utils/Wrapper";
-import Center from "../utils/Center";
+import WithWrapper from "../../utils/Wrapper";
+import Center from "../../utils/Center";
 import Form from "./Form";
 import StyledRegisterSection from './Styled';
 
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 function Registration() {
     const { md } = useMediaQuery();

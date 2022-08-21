@@ -4,10 +4,10 @@ import Button from "@mui/material/Button";
 
 import { alpha } from "@mui/material/styles";
 
-import Arrow from '../../utils/icons/Arrow';
-import ExtraFeatures from '../../ExtraFeatures';
+import Arrow from '../../../utils/icons/Arrow';
+import ExtraFeatures from '../../../ExtraFeatures';
 
-import useMediaQuery from "../../../hooks/useMediaQuery";
+import useMediaQuery from "../../../../hooks/useMediaQuery";
 
 /**
  * @param {DrawerProps} props 

@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 
 import { styled } from "@mui/material/styles";
 
-import Center, { style } from "../utils/Center";
+import Center, { style } from "../../utils/Center";
 
 export const StylCategoryData = styled(Box)(() => ({
 	display: "flex",

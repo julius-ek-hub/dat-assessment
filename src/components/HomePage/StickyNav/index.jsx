@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 import StyledNavBar from './Styled';
-import WithWrapper from "../utils/Wrapper";
+import WithWrapper from "../../utils/Wrapper";
+import Image from "../../utils/Image";
 import ForSmallScreens from "./ForSmallScreens";
 import ForBigScreens from "./ForBigScreens";
-import Image from "../utils/Image";
 
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 function StickyNav() {
     const { md } = useMediaQuery();

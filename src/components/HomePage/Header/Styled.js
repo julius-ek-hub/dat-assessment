@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 
 import { styled } from "@mui/material/styles";
 
-import { style } from "../utils/Center";
+import { style } from "../../utils/Center";
 
 export const StyldHeader = styled(Box)(() => ({
 	minHeight: "100vh",

@@ -7,10 +7,10 @@ import Box from "@mui/material/Box";
 import { StylCategoryData } from "./Styled";
 import Card from "./Card";
 import LoadingIndicator from "./LoadingIndicator";
-import ArrowIcon from "../utils/icons/Arrow";
+import ArrowIcon from "../../utils/icons/Arrow";
 
-import useLocalStorage from "../../hooks/useLocalStorage";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useLocalStorage from "../../../hooks/useLocalStorage";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 
 /**

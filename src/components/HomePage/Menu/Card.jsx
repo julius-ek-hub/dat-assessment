@@ -4,11 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import CartChanges from '../Cart/CartChanges';
-import CartIcon from '../utils/icons/Cart';
-import Image from '../utils/Image';
+import CartChanges from '../../Cart/CartChanges';
+import CartIcon from '../../utils/icons/Cart';
+import Image from '../../utils/Image';
 
-import useCart, { cart_data_props } from '../../hooks/useCart';
+import useCart, { cart_data_props } from '../../../hooks/useCart';
 
 
 /**

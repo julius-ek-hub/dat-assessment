@@ -52,7 +52,7 @@ npm start
   - `Wrapper`: Wraps its children in paddings depending on screen size.
   - `Image` : Fetches and converts image src to blob src and while doing so, displays a loading indicator. All images in the project are loaded using this component.
 
-- `Main components` : Every compont here is a section to the home page except for the `Cart`
+- `Main components` : Every compont here is a section to the home page except for the `Cart`, `ExtraFeatures`
   - `Cart/` : Provides neccesary UIs for the cart in store
   - `ExtraFeatures` : These are additional features including `ThemeSwitch` that will toggle the theme mode between `light` and `dark`, `ImageLoadingSimulator` which will simulate a situation where images loaded using `utils/Image` are still loading.
   - `...rest` : The rest of the components are the various sections of the home page

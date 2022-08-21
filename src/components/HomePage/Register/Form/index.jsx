@@ -11,7 +11,7 @@ import SubmitButton from "./SubmitButton";
 
 import registrationSchema, { defaultValues } from "./schema";
 
-import useFetch from "../../../hooks/useFetch";
+import useFetch from "../../../../hooks/useFetch";
 
 function Form() {
     const [loading, setLoading] = useState(false);

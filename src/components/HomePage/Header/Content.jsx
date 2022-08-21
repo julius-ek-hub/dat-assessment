@@ -2,10 +2,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import Center from "../utils/Center";
-import Image from "../utils/Image";
+import Center from "../../utils/Center";
+import Image from "../../utils/Image";
 
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 function Content() {
     const { lg } = useMediaQuery();

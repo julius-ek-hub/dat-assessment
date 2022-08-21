@@ -5,9 +5,9 @@ import Box from "@mui/material/Box";
 import MuiMenu from "@mui/material/Menu";
 import Typography from "@mui/material/Typography";
 
-import Cart from "../../Cart";
-import CatBadge from "../../Cart/CartBadge";
-import Center from "../../utils/Center";
+import Cart from "../../../Cart";
+import CatBadge from "../../../Cart/CartBadge";
+import Center from "../../../utils/Center";
 
 function CartDropdown() {
     const [anchorEl, setAnchorEl] = useState(null);

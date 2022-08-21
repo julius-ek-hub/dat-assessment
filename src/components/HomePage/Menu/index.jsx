@@ -3,11 +3,11 @@ import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
-import WithWrapper from '../utils/Wrapper';
+import WithWrapper from '../../utils/Wrapper';
 import CategoriesTab from './CategoriesTab';
 import CategoryData from './CategoryData'
 
-import useMediaQuery from '../../hooks/useMediaQuery';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 
 export default function Menu() {
     const [active, setActive] = useState(0);

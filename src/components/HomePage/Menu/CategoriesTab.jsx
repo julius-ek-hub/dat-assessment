@@ -4,10 +4,10 @@ import Tabs, { TabsProps } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from "@mui/material/Typography";
 
-import Center from "../utils/Center";
-import Image from "../utils/Image";
+import Center from "../../utils/Center";
+import Image from "../../utils/Image";
 
-import useLocalStorage from "../../hooks/useLocalStorage";
+import useLocalStorage from "../../../hooks/useLocalStorage";
 
 /**
  * @param {TabsProps} props 

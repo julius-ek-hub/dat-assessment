@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 
-import Center from "../utils/Center";
-import WithWrapper from "../utils/Wrapper";
+import Center from "../../utils/Center";
+import WithWrapper from "../../utils/Wrapper";
 
 function Footer() {
     return (

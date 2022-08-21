@@ -1,6 +1,6 @@
 import { StyldHeader } from './Styled';
 
-import WithWrapper from '../utils/Wrapper';
+import WithWrapper from '../../utils/Wrapper';
 import Content from "./Content";
 import Address from "./Address";
 
