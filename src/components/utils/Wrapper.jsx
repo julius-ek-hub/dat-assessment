@@ -8,10 +8,10 @@ import useMediaQuery from "../../hooks/useMediaQuery";
  */
 
 const Wrapper = (props) => {
-    const { md } = useMediaQuery();
+    const { md, lg } = useMediaQuery();
 
     return (
-        <Box px={md ? '10rem' : "2rem"} {...props} />
+        <Box px={lg ? '10rem' : md ? '5rem' : "2rem"} {...props} />
     )
 };
 
