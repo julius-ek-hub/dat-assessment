@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+import StickyNav from "./components/StickyNav";
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import Register from "./components/Register";
+import Footer from "./components/Footer";
+
+import theme from "./theme";
+import useExtra from "./hooks/useExtra";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { theme: mode } = useExtra();
+
+	return (
+		<ThemeProvider theme={theme(mode)}>
+			<StickyNav />
+			<Header />
+			<Register />
+			<Menu />
+			<Footer />
+			<CssBaseline enableColorScheme />
+		</ThemeProvider>
+	);
 }
 
 export default App;

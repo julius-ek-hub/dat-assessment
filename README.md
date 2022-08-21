@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Dat Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The task was done using React and its Material UI. I found no need to use NextJS because it's just a landing page. A live version of the completed task is running on vercel just so you can have a look before if necessary, run it in your local machine. Check it out [https://dat-assessment.vercel.app](https://dat-assessment.vercel.app)
 
-## Available Scripts
+## Start
 
-In the project directory, you can run:
+```cmd
+npm insall
+```
 
-### `npm start`
+```cmd
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## #Note
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Please let me know about anything that is unclear.
+- App is responsive so you can try different screen sizes.
+- Will keep adding updates untill my feedback is provided, thanks.
+- styling is done in the form
+  - `Component/`
+    - `Styled.js`
+    - `...others.jsx`
+- @mui uses @motion for styling which provides built-in support for sass as JavaScript objects
 
-### `npm test`
+## Breakdown
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dependencies
 
-### `npm run build`
+- `@mui` : For designing the UI
+- `Formik` : For easy form validation
+- `Yup` : For creating validation schema used by `Formik`
+- `Redux` : For centralising the global state of the application such as (theme, cart informations, etc)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### componenets
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `utils/` : This folder holds utility components that are repeatedly used within the application. Some of which include
 
-### `npm run eject`
+  - `icons/` : Contains all SVGIcons for the app
+  - `Center` : Centralizes its contents both vertically and horizontally
+  - `Wrapper`: Wraps its children in paddings depending on screen size.
+  - `Image` : Fetches and converts image src to blob src and while doing so, displays a loading indicator. All images in the project were loaded using this component.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `Main components` : Every compont here is a section to the home page except for the `Cart`
+  - `Cart/` : Provides neccesary UIs for the cart in store
+  - `ExtraFeatures` : These are additional features including `ThemeSwitch` that will toggle the theme mode between `light` and `dark`, `ImageLoadingSimultor` which will simulate a situation where images loaded using `utils/Image` are still loading.
+  - `...rest` : The rest of the components are the various sections of the home page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### hooks
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `useLocalStorage` : Keeps in sync with localStorage. Always tries to fetch from localStorage, but if no result is found, then fetch from api and save the response.
+- `useFetch` : Provides an easy interface for calling api endpoints.
+- `useMediaQuery` : Keeps in sync with device size by using mui's breakpoints
+- `useExtra`: Returns methods and values for the extra features added such as `theme`, `toggleThemeMode`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### features/store
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `cartSlice` : Stores all informations about the shopping cart for global access
+- `extraSlice` : Store all informations about the extra features for global access
+  ss
