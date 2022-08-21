@@ -1,10 +1,12 @@
-import useMuiMediaQuery from "@mui/material/useMediaQuery";
+import usMuiMediaQuery from "@mui/material/useMediaQuery";
 import useTheme from "@mui/material/styles/useTheme";
 
 function useMediaQuery() {
 	const theme = useTheme();
 
-	const useSize = (key) => useMuiMediaQuery(theme.breakpoints.up(key));
+	const useSize = (key) => usMuiMediaQuery(theme.breakpoints.up(key));
+
+	const prefersDarkMode = usMuiMediaQuery("(prefers-color-scheme: dark)");
 
 	return {
 		xsm: useSize("xs"),
@@ -12,6 +14,7 @@ function useMediaQuery() {
 		md: useSize("md"),
 		lg: useSize("lg"),
 		xlg: useSize("xlg"),
+		prefersDarkMode,
 	};
 }
 

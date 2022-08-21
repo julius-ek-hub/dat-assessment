@@ -9,13 +9,14 @@ import HomePage from "./components/HomePage";
 import theme from "./theme";
 
 import useExtra from "./hooks/useExtra";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
 	const { theme: mode, initializeTheme } = useExtra();
+	const { prefersDarkMode } = useMediaQuery();
 
 	useLayoutEffect(() => {
-		initializeTheme();
-
+		initializeTheme(prefersDarkMode && "dark");
 		//  You can remove the code below in your local environment
 		//  ---------------------------------------------
 		//  Since the api endpoints are not secured, the live preview
@@ -25,7 +26,7 @@ function App() {
 		const location = window.location;
 		if (location.protocol !== "http:")
 			location.href = "http://" + location.host;
-	}, []);
+	}, [prefersDarkMode]);
 
 	return (
 		<ThemeProvider theme={theme(mode)}>

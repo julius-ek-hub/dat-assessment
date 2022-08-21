@@ -23,8 +23,8 @@ function useExtra() {
 		saveItemToLocalStorage("themeMode", value);
 	};
 
-	const initializeTheme = () => {
-		setThemeMode(getItemFromLocalStorage("themeMode"));
+	const initializeTheme = (mode) => {
+		setThemeMode(mode || getItemFromLocalStorage("themeMode"));
 	};
 
 	return {

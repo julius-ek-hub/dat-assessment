@@ -57,13 +57,13 @@ npm start
   - `ThemeSwitch` that will toggle the theme mode between `light` and `dark`.
   - `ImageLoadingSimulator` which will simulate a situation where images loaded using `utils/Image` are still loading.
 - `ErrorBoundary/` : To catch any error that occurs during render.
-- `Homepage/` : The entire Home page with it's various sections
+- `HomePage/` : The entire Home page with it's various sections
 
 #### hooks
 
 - `useLocalStorage` : Keeps in sync with localStorage. Always tries to fetch from localStorage, but if no result is found, then fetch from api and save the response.
 - `useFetch` : Provides an easy interface for calling api endpoints.
-- `useMediaQuery` : Keeps in sync with device size by using mui's breakpoints
+- `useMediaQuery` : Keeps in sync with device's size and color scheme by using mui's breakpoints.
 - `useExtra`: Returns methods and values for the extra features added such as `theme`, `toggleThemeMode`
 
 #### features/store
