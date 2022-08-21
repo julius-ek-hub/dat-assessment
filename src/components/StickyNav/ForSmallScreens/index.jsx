@@ -18,10 +18,13 @@ import Drawer from "./Drawer";
 
 import useCart from "../../../hooks/useCart";
 
+import * as scrollers from "../scollers";
+
 function ForSmallScreens() {
 
     const [open, setOpen] = useState(false);
     const { count } = useCart();
+
 
     return (
         <>
@@ -33,9 +36,9 @@ function ForSmallScreens() {
             <Drawer
                 open={open}
                 onClose={() => setOpen(false)}>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>Form</MenuItem>
-                <MenuItem>Menu</MenuItem>
+                <MenuItem onClick={scrollers.scrollToTop.bind({})} >Home</MenuItem>
+                <MenuItem onClick={scrollers.scrollToRegister.bind({})} >Form</MenuItem>
+                <MenuItem onClick={scrollers.scrollToMenu.bind({})} >Menu</MenuItem>
                 <Accordion elevation={0}>
                     <AccordionSummery>
                         <CatBadge /> <Typography variant="h6" ml={1.5}>Cart</Typography>

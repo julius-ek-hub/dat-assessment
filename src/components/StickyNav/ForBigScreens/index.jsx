@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import CatDropdown from "./CartDropDown";
 import ExtraFeatures from "../../ExtraFeatures";
 
+import * as scrollers from "../scollers";
+
 /**
  * @param {ButtonProps} props 
  */
@@ -41,9 +43,9 @@ const ForBigScreens = () => (
     <>
         <Box component="ul">
             <ExtraFeatures />
-            <NavItem title="Home" />
-            <NavItem title="Form" />
-            <NavItem title="Menu" />
+            <NavItem title="Home" onClick={scrollers.scrollToTop.bind({})} />
+            <NavItem title="Form" onClick={scrollers.scrollToRegister.bind({})} />
+            <NavItem title="Menu" onClick={scrollers.scrollToMenu.bind({})} />
         </Box>
         <CatDropdown />
     </>
