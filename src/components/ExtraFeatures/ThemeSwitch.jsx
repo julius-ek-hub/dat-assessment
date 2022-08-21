@@ -10,7 +10,7 @@ function ThemeSwitch() {
 
     return (
         <IconButton
-            title="If toggled on, will set the page to dark mode"
+            title="If toggled off, will set the page to dark mode"
             onClick={toggleThemeMode}>
             <Badge badgeContent="Extra" color="error">
                 <LightBulbIcon state={theme === 'light' ? 'on' : 'off'} />

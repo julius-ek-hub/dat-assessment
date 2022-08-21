@@ -1,10 +1,10 @@
 import Box, { BoxProps } from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 import Center from "../utils/Center";
 import EachCartItem from "./EachCartItem";
+import JSONCheckout from "./JSONCheckout";
 
 import useCart from "../../hooks/useCart";
 
@@ -13,7 +13,7 @@ import useCart from "../../hooks/useCart";
  */
 function Cart(props) {
 
-    const { count, cart, totalCost } = useCart();
+    const { count, cart } = useCart();
 
     return (
         <Box {...props}>
@@ -26,13 +26,7 @@ function Cart(props) {
             ) : (
                 <Stack gap={2} my={2}>
                     {cart.map((c, key) => <EachCartItem key={key} item={c} />)}
-                    <Button
-                        variant="contained"
-                        size="large"
-                        sx={{ justifyContent: 'space-between', color: 'background.paper' }}>
-                        <Typography>Check out</Typography>
-                        <Typography>{totalCost.toFixed(2)} $</Typography>
-                    </Button>
+                    <JSONCheckout />
                 </Stack>
             )}
         </Box>
