@@ -1,6 +1,14 @@
 # Dat Assessment
 
-The task was done using React and its Material UI. I found no need to use NextJS because it's just a landing page. A live version of the completed task is running on vercel just so you can have a look before if necessary, run it in your local machine. Check it out [https://dat-assessment.vercel.app](https://dat-assessment.vercel.app)
+The task was done using React and its Material UI. I found no need to use NextJS because it's just a landing page.
+
+## Live preview
+
+A live version of the completed task is running on heroku just so you can have a look before if necessary, run it in your local machine.
+
+Note that you will not be served the production build so expect some delay on first load as in dev environmnet.
+
+Live link [http://dat-assessment.herokuapp.com/](http://dat-assessment.herokuapp.com/)
 
 ## Start
 
@@ -22,6 +30,7 @@ npm start
     - `Styled.js`
     - `...others.jsx`
 - @mui uses @motion for styling which provides built-in support for sass as JavaScript objects
+- No testing made due to shortage of time
 
 ## Breakdown
 
