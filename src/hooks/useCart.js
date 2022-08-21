@@ -31,9 +31,14 @@ const useCart = () => {
 	 */
 
 	const add = (item) => {
-		if (item.availableQuantity === 0) return;
-		if (inCart(item) && item.availableQuantity > item.quantity)
-			return dispatch(increaseItem(item));
+		if (
+			item.availableQuantity === 0 ||
+			item.availableQuantity < Number(item.quantity)
+		)
+			return;
+
+		if (inCart(item)) return dispatch(increaseItem(item));
+
 		dispatch(addItem(item));
 	};
 

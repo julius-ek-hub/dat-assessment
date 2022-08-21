@@ -25,7 +25,7 @@ function Cart(props) {
                 </Center>
             ) : (
                 <Stack gap={2} my={2}>
-                    {cart.map((c) => <EachCartItem key={c.slug} item={c} />)}
+                    {cart.map((c, key) => <EachCartItem key={key} item={c} />)}
                     <Button
                         variant="contained"
                         size="large"
