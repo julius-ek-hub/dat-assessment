@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Cart from "../../../Cart";
 import CatBadge from "../../../Cart/CartBadge";
 import Center from "../../../utils/Center";
-import JSONCheckout from "../../../Cart/JSONCheckout";
+import CheckoutButton from "../../../Cart/CheckoutButton";
 
 function CartDropdown() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -37,7 +37,7 @@ function CartDropdown() {
                 <Box width={400} py={3} px={4}>
                     <Typography variant="h4" fontWeight="bold">Cart</Typography>
                     <Cart maxHeight="calc(100vh - 200px)" overflow="auto" />
-                    <JSONCheckout />
+                    <CheckoutButton />
                 </Box>
             </MuiMenu>
         </>

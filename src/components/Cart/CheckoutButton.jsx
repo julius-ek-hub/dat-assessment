@@ -11,7 +11,7 @@ import useCart from '../../hooks/useCart';
  * @param {AccordionProps} props
  */
 
-function JSONCheckout(props) {
+function CheckoutButton(props) {
     const { totalCost, count } = useCart();
 
     return (
@@ -33,4 +33,4 @@ function JSONCheckout(props) {
     );
 }
 
-export default JSONCheckout;
+export default CheckoutButton;

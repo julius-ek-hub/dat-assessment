@@ -7,7 +7,7 @@ import { alpha } from "@mui/material/styles";
 
 import Arrow from '../../../utils/icons/Arrow';
 import ExtraFeatures from '../../../ExtraFeatures';
-import JSONCheckout from "../../../Cart/JSONCheckout";
+import CheckoutButton from "../../../Cart/CheckoutButton";
 
 import useMediaQuery from "../../../../hooks/useMediaQuery";
 
@@ -49,7 +49,7 @@ function Drawer(props) {
                     </Button>
                 </Box>
                 <Box flexGrow={1} overflow="auto">{children}</Box>
-                <JSONCheckout sx={{ mb: 1 }} />
+                <CheckoutButton sx={{ mb: 1 }} />
             </Stack>
         </MuiDrawer>
     );

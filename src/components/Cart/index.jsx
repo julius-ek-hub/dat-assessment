@@ -4,7 +4,6 @@ import Stack from "@mui/material/Stack";
 
 import Center from "../utils/Center";
 import EachCartItem from "./EachCartItem";
-import JSONCheckout from "./JSONCheckout";
 
 import useCart from "../../hooks/useCart";
 
