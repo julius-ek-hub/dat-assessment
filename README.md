@@ -48,14 +48,16 @@ npm start
 - `utils/` : This folder holds utility components that are repeatedly used within the application. Some of which include
 
   - `icons/` : Contains all SVGIcons for the app
-  - `Center` : Centralizes its contents both vertically and horizontally
+  - `Center` : Centralizes its children both vertically and horizontally
   - `Wrapper`: Wraps its children in paddings depending on screen size.
   - `Image` : Fetches and converts image src to blob src and while doing so, displays a loading indicator. All images in the project are loaded using this component.
 
-- `Main components` : Every compont here is a section to the home page except for the `Cart`, `ExtraFeatures`
-  - `Cart/` : Provides neccesary UIs for the cart in store
-  - `ExtraFeatures` : These are additional features including `ThemeSwitch` that will toggle the theme mode between `light` and `dark`, `ImageLoadingSimulator` which will simulate a situation where images loaded using `utils/Image` are still loading.
-  - `...rest` : The rest of the components are the various sections of the home page
+- `Cart/` : The cart UI with neccesary individual UIs.
+- `ExtraFeatures/` : These are additional features including..
+  - `ThemeSwitch` that will toggle the theme mode between `light` and `dark`.
+  - `ImageLoadingSimulator` which will simulate a situation where images loaded using `utils/Image` are still loading.
+- `ErrorBoundary/` : To catch any error that occurs during render.
+- `Homepage/` : The entire Home page with it's various sections
 
 #### hooks
 

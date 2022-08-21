@@ -7,7 +7,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
  * @param {BoxProps} props 
  */
 
-const WithWrapper = (props) => {
+const Wrapper = (props) => {
     const { md } = useMediaQuery();
 
     return (
@@ -15,4 +15,4 @@ const WithWrapper = (props) => {
     )
 };
 
-export default WithWrapper;
+export default Wrapper;

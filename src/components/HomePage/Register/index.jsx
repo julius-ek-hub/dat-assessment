@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 
-import WithWrapper from "../../utils/Wrapper";
+import Wrapper from "../../utils/Wrapper";
 import Center from "../../utils/Center";
 import Form from "./Form";
 import StyledRegisterSection from './Styled';
@@ -11,7 +11,7 @@ function Registration() {
     const { md } = useMediaQuery();
 
     return (
-        <WithWrapper
+        <Wrapper
             component="section"
             mt={4}
             id="register-section">
@@ -38,7 +38,7 @@ function Registration() {
                     <Form />
                 </Center>
             </StyledRegisterSection>
-        </WithWrapper>
+        </Wrapper>
     );
 }
 

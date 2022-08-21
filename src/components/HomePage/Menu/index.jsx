@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
-import WithWrapper from '../../utils/Wrapper';
+import Wrapper from '../../utils/Wrapper';
 import CategoriesTab from './CategoriesTab';
 import CategoryData from './CategoryData'
 
@@ -18,7 +18,7 @@ export default function Menu() {
     };
 
     return (
-        <WithWrapper
+        <Wrapper
             mt={4}
             component="section"
             id="menu-section">
@@ -46,6 +46,6 @@ export default function Menu() {
                     flexGrow={1}
                     {...(!md && { mt: 2 })} />
             </Stack>
-        </WithWrapper>
+        </Wrapper>
     );
 }

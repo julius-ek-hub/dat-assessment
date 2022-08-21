@@ -3,13 +3,13 @@ import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 
 import Center from "../utils/Center";
-import WithWrapper from "../utils/Wrapper";
+import Wrapper from "../utils/Wrapper";
 import ReloadIcon from "../utils/icons/Reload";
 
 function Error({ error = '' }) {
 
     return (
-        <WithWrapper height="100vh" display="flex" flexDirection="column" pt={2}>
+        <Wrapper height="100vh" display="flex" flexDirection="column" pt={2}>
             <Alert severity="error" variant="filled">Error</Alert>
             <Center flexGrow={1} flexDirection="column" gap={2}>
                 <Typography>An error occured during render</Typography>
@@ -22,7 +22,7 @@ function Error({ error = '' }) {
                     </Button>
                 </Center>
             </Center>
-        </WithWrapper>
+        </Wrapper>
     )
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import StyledNavBar from './Styled';
-import WithWrapper from "../../utils/Wrapper";
+import Wrapper from "../../utils/Wrapper";
 import Image from "../../utils/Image";
 import ForSmallScreens from "./ForSmallScreens";
 import ForBigScreens from "./ForBigScreens";
@@ -25,7 +25,7 @@ function StickyNav() {
     }, []);
 
     return (
-        <WithWrapper
+        <Wrapper
             component="nav"
             sx={{
                 transition: '0.5s top',
@@ -51,7 +51,7 @@ function StickyNav() {
                     }} />
                 {md ? <ForBigScreens /> : <ForSmallScreens />}
             </StyledNavBar>
-        </WithWrapper>
+        </Wrapper>
     );
 }
 

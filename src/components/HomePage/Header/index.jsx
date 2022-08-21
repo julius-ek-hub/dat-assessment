@@ -1,12 +1,12 @@
 import { StyldHeader } from './Styled';
 
-import WithWrapper from '../../utils/Wrapper';
+import Wrapper from '../../utils/Wrapper';
 import Content from "./Content";
 import Address from "./Address";
 
 function Header() {
     return (
-        <WithWrapper
+        <Wrapper
             bgcolor="lightBg.main"
             component='header'
             pb={6}>
@@ -14,7 +14,7 @@ function Header() {
                 <Content />
                 <Address />
             </StyldHeader>
-        </WithWrapper>
+        </Wrapper>
     );
 }
 
