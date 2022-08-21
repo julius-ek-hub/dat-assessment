@@ -11,7 +11,7 @@ import useFetch from "../../hooks/useFetch";
 import useExtra from "../../hooks/useExtra";
 
 /**
- * Loads image with loading indicator
+ * Loads image with loading indicator and reload possibility
  * @param {BoxProps & {loadingProps: SkeletonProps} & {src: String, alt: String}} props 
  */
 
