@@ -20,22 +20,25 @@ const useCart = () => {
 	const { cart } = useSelector(({ cart }) => cart);
 
 	/**
-	 * @param {cart_data_props} item
+	 * Returs true if item is found in the cart
+	 * @param {typeof cart_data_props} item
 	 */
 
 	const inCart = (item) => Boolean(cart.find((c) => c.slug === item.slug));
 
 	/**
-	 * @param {cart_data_props} item
+	 * @param {typeof cart_data_props} item
 	 */
 
 	const add = (item) => {
-		if (inCart(item)) return dispatch(increaseItem(item));
+		if (item.availableQuantity === 0) return;
+		if (inCart(item) && item.availableQuantity > item.quantity)
+			return dispatch(increaseItem(item));
 		dispatch(addItem(item));
 	};
 
 	/**
-	 * @param {cart_data_props} item
+	 * @param {typeof cart_data_props} item
 	 * @param {Boolean} permanently_delete
 	 */
 
