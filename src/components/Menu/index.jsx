@@ -18,7 +18,7 @@ export default function Menu() {
     };
 
     return (
-        <WithWrapper mt={4}>
+        <WithWrapper mt={4} component="section">
             <Typography
                 variant='h3'
                 fontWeight="bold">

@@ -26,6 +26,7 @@ function StickyNav() {
 
     return (
         <WithWrapper
+            component="nav"
             sx={{
                 transition: '0.5s top',
                 top: -100,

@@ -6,7 +6,10 @@ import Address from "./Address";
 
 function Header() {
     return (
-        <WithWrapper bgcolor="lightBg.main" pb={6}>
+        <WithWrapper
+            bgcolor="lightBg.main"
+            component='header'
+            pb={6}>
             <StyldHeader>
                 <Content />
                 <Address />

@@ -9,7 +9,7 @@ export const StyldHeader = styled(Box)(() => ({
 	minHeight: "100vh",
 }));
 
-export const StyledAddressCard = styled(Paper)(({ active, theme }) => ({
+export const StyledAddressCard = styled(Paper)(() => ({
 	...style,
 	height: "200px",
 	borderRadius: "20px",

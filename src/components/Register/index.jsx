@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import WithWrapper from "../utils/Wrapper";
@@ -12,7 +11,10 @@ function Registration() {
     const { md } = useMediaQuery();
 
     return (
-        <WithWrapper mt={4}>
+        <WithWrapper
+            component="section"
+            mt={4}
+            id="register-section">
             <StyledRegisterSection
                 children-width={md ? '48%' : '100%'}
                 component="section"
