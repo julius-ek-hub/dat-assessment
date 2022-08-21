@@ -23,11 +23,21 @@ const CartChanges = (props) => {
     const IconButton = (props) => <MuiIconButton  {...props} size={size} />
 
     return (
-        <Stack direction="row" justifyContent="space-between" alignItems="center" {...rest}>
-            <IconButton onClick={() => remove(target)}><MinusIcon /></IconButton>
+        <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            {...rest}>
+            <IconButton
+                onClick={() => remove(target)}><MinusIcon /></IconButton>
             <Typography>{target.quantity}</Typography>
-            <IconButton onClick={() => add(target)}><PlusIcon /></IconButton>
-            <Typography color="text.secondary" minWidth={50} textAlign="center">
+            <IconButton
+                onClick={() => add(target)}
+                disabled={target.quantity === target.availableQuantity}><PlusIcon /></IconButton>
+            <Typography
+                color="text.secondary"
+                minWidth={50}
+                textAlign="center">
                 {target.currency + (target.quantity * target.price).toFixed(2)}
             </Typography>
         </Stack>

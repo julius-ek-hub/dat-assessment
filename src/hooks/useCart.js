@@ -33,7 +33,7 @@ const useCart = () => {
 	const add = (item) => {
 		if (
 			item.availableQuantity === 0 ||
-			item.availableQuantity < Number(item.quantity)
+			item.availableQuantity === Number(item.quantity)
 		)
 			return;
 
