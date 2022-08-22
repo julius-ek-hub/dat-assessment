@@ -6,10 +6,10 @@ import {
 	removeItem,
 } from "../features/cartSlice";
 
-import { category_data_item_props } from "./useLocalStorage";
+import { category_data_props } from "./useLocalStorage";
 
 /**
- * @type {category_data_item_props & {quantity: Number}}
+ * @type {category_data_props & {quantity: Number}}
  */
 
 export let cart_data_props;

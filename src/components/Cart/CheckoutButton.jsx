@@ -18,7 +18,7 @@ function CheckoutButton(props) {
 
     return (
         <Accordion elevation={0} disableGutters {...props}>
-            <AccordionSummery sx={{
+            <AccordionSummery disabled={count === 0} sx={{
                 bgcolor: 'primary.main',
                 color: 'common.white'
             }}>

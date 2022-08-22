@@ -1,17 +1,30 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { BoxProps } from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
 
 import { StylCategoryData } from "./Styled";
 import Card from "./Card";
-import LoadingIndicator from "./LoadingIndicator";
+import CategoryDataLoading from "./LoadingIndicator";
 import ArrowIcon from "../../utils/icons/Arrow";
+import ReloadIcon from "../../utils/icons/Reload";
+import Center from "../../utils/Center";
 
 import useLocalStorage from "../../../hooks/useLocalStorage";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
+/**
+ * @param {IconButtonProps} props 
+ */
+
+const Reload = props => (
+    <Center height={200} width="100%" flexDirection="column">
+        <Typography> Reload Data</Typography>
+        <IconButton title="Reload category data" {...props}><ReloadIcon /></IconButton>
+    </Center>
+)
 
 /**
  * @param {BoxProps & {active: Number}} props 
@@ -20,6 +33,7 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 function CategoryData(props) {
     const [categoryData, setCategorayData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [failed, setFailed] = useState(false);
     const [categoriesCount, setCategoriesCount] = useState(null);
     const { sm } = useMediaQuery();
 
@@ -39,12 +53,18 @@ function CategoryData(props) {
     const { getCategoryData, getCategories } = useLocalStorage();
 
     const doSetCategoryData = async () => {
-        setLoading(true);
-        const categories = await getCategories();
-        const _categoryData = await getCategoryData(categories[active].slug);
-        setCategorayData(_categoryData);
-        setCategoriesCount(categories.length);
-        setLoading(false);
+        try {
+            setLoading(true);
+            setFailed(false);
+            const categories = await getCategories();
+            const _categoryData = await getCategoryData(categories[active].slug);
+            setCategorayData(_categoryData);
+            setCategoriesCount(categories.length);
+        } catch (e) {
+            setFailed(true);
+        } finally {
+            setLoading(false);
+        }
     }
 
     const handleScroll = (direction) => {
@@ -88,7 +108,7 @@ function CategoryData(props) {
                 }
             }
         })}>
-            <IconButton>
+            <IconButton disabled={(loading || failed)}>
                 <ArrowIcon color="inherit" direction={direction < 0 ? 'left' : 'right'} />
             </IconButton>
         </Box>
@@ -97,7 +117,13 @@ function CategoryData(props) {
     return (
         <StylCategoryData ref={scrollableRef} {...rest}>
             <Arrow direction={-1} />
-            <Box>{loading ? <LoadingIndicator /> : allCategoryData}</Box>
+            <Box>
+                {loading ?
+                    <CategoryDataLoading /> :
+                    failed ? <Reload onClick={doSetCategoryData} /> :
+                        allCategoryData
+                }
+            </Box>
             <Arrow direction={1} />
         </StylCategoryData>
     );

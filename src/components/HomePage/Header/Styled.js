@@ -3,14 +3,14 @@ import Paper from "@mui/material/Paper";
 
 import { styled } from "@mui/material/styles";
 
-import { style } from "../../utils/Center";
+import { centerStyle } from "../../utils/Center";
 
 export const StyldHeader = styled(Box)(() => ({
 	minHeight: "100vh",
 }));
 
 export const StyledAddressCard = styled(Paper)(() => ({
-	...style,
+	...centerStyle,
 	height: "200px",
 	borderRadius: "20px",
 	flexDirection: "column",

@@ -13,7 +13,7 @@ import useFetch from "./useFetch";
  * }}
  */
 
-export let category_data_item_props;
+export let category_data_props;
 
 /**
  * @type {{
@@ -67,7 +67,7 @@ function useLocalStorage() {
 	/**
 	 * Tries to fetch category data from localStorage. If failure then fetch from api
 	 * @param {String} slug
-	 * @returns {Promise<category_data_item_props>}
+	 * @returns {Promise<category_data_props>}
 	 */
 
 	const getCategoryData = async (slug) => {

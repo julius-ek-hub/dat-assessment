@@ -3,15 +3,22 @@ import { useEffect, useMemo, useState } from "react";
 import Tabs, { TabsProps } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from "@mui/material/Typography";
-import IconButton from '@mui/material/IconButton';
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 
 import Center from "../../utils/Center";
 import Image from "../../utils/Image";
 import ArrowIcon from "../../utils/icons/Arrow";
+import ReloadIcon from "../../utils/icons/Reload";
 
 import useLocalStorage from "../../../hooks/useLocalStorage";
-import useMediaQuery from "../../../hooks/useMediaQuery";
+import { CategoriesLoading } from "./LoadingIndicator";
+
+/**
+ * @param {IconButtonProps} props 
+ */
+
+const Reload = props => <IconButton title="Reload categories" {...props}><ReloadIcon /></IconButton>
 
 /**
  * @param {TabsProps} props 
@@ -19,6 +26,8 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 
 function CategoriesTab(props) {
     const [categories, setCategories] = useState([]);
+    const [failed, setFailed] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const { getCategories } = useLocalStorage();
 
@@ -28,9 +37,19 @@ function CategoriesTab(props) {
 
     const doSetCategories = async () => {
         if (categories.length > 0) return;
-        const _categories = await getCategories();
-        setCategories(_categories);
-        onChange({}, 0);
+
+        try {
+            setFailed(false);
+            setLoading(true);
+            const _categories = await getCategories();
+            setCategories(_categories);
+            onChange({}, 0);
+        } catch (e) {
+            setFailed(true);
+        }
+        finally {
+            setLoading(false);
+        }
     }
 
     const handleChangeByArrow = (direction) => {
@@ -77,15 +96,22 @@ function CategoriesTab(props) {
 
     return (
         <Stack direction={horizontal ? "row" : 'column'} alignItems="center">
-            <Arrow direction={["left", "up"]} />
-            <Tabs
-                value={active}
-                onChange={onChange}
-                orientation={orientation}
-                {...rest}>
-                {allCategories}
-            </Tabs>
-            <Arrow direction={["right", "down"]} />
+            {loading ?
+                <CategoriesLoading /> :
+                failed ?
+                    <Reload onClick={doSetCategories} /> : (
+                        <>
+                            <Arrow direction={["left", "up"]} />
+                            <Tabs
+                                value={active}
+                                onChange={onChange}
+                                orientation={orientation}
+                                {...rest}>
+                                {allCategories}
+                            </Tabs>
+                            <Arrow direction={["right", "down"]} />
+                        </>
+                    )}
         </Stack>
     );
 }

@@ -3,13 +3,13 @@ import Paper from "@mui/material/Paper";
 
 import { styled } from "@mui/material/styles";
 
-import Center, { style } from "../../utils/Center";
+import Center, { centerStyle } from "../../utils/Center";
 
 export const StylCategoryData = styled(Box)(() => ({
 	display: "flex",
 	position: "relative",
 	"&>*": {
-		...style,
+		...centerStyle,
 		width: "20px",
 		padding: "0 30px",
 		"&:is(:nth-of-type(2))": {
@@ -45,7 +45,7 @@ export const StyledAddress = styled(Box)(() => ({
 }));
 
 export const StyledAddressCard = styled(Paper)(({ active, theme }) => ({
-	...style,
+	...centerStyle,
 	height: "200px",
 	width: "32%",
 	borderRadius: "20px",
