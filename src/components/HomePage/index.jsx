@@ -4,16 +4,14 @@ import Register from "./Register";
 import Menu from "./Menu";
 import Footer from "./Footer";
 
-function HomePage() {
-    return (
-        <>
-            <StickyNav />
-            <Header />
-            <Register />
-            <Menu />
-            <Footer />
-        </>
-    );
-}
+const HomePage = () => (
+    <>
+        <StickyNav />
+        <Header />
+        <Register />
+        <Menu />
+        <Footer />
+    </>
+);
 
 export default HomePage;

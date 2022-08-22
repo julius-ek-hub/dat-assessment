@@ -44,7 +44,7 @@ export default function Menu() {
                     onChange={handleChange}
                     active={active}
                     flexGrow={1}
-                    {...(!md && { mt: 2 })} />
+                    {...(md ? { ml: 2 } : { mt: 2 })} />
             </Stack>
         </Wrapper>
     );

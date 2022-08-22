@@ -23,7 +23,7 @@ function CategoryData(props) {
     const [categoriesCount, setCategoriesCount] = useState(null);
     const { sm } = useMediaQuery();
 
-    const defaultSmallScreenArrowStyle = {
+    const defaultXMscreenArrowStyle = {
         top: 0,
         bottom: 0,
         position: 'absolute'
@@ -34,7 +34,7 @@ function CategoryData(props) {
     /**
      * @type {{current: HTMLDivElement}}
      */
-    const slideRef = useRef();
+    const scrollableRef = useRef();
 
     const { getCategoryData, getCategories } = useLocalStorage();
 
@@ -48,7 +48,7 @@ function CategoryData(props) {
     }
 
     const handleScroll = (direction) => {
-        const scrollable = slideRef.current.children[1];
+        const scrollable = scrollableRef.current.children[1];
 
         scrollable.scrollTo({
             left: scrollable.scrollLeft + direction * scrollable.clientWidth,
@@ -78,21 +78,24 @@ function CategoryData(props) {
 
 
     const Arrow = ({ direction = 1 }) => (
-        <Box {...(!sm && {
-            ...defaultSmallScreenArrowStyle,
-            ...(direction > 0 ? { right: 0 } : { left: 0 })
+        <Box onClick={() => handleScroll(direction)} {...(!sm && {
+            ...defaultXMscreenArrowStyle,
+            ...(direction > 0 ? { right: 0 } : { left: 0, }),
+            sx: {
+                backgroundImage: theme => {
+                    return `linear-gradient(to ${direction > 0 ? 'right' : 'left'
+                        }, transparent, ${theme.palette.background.paper})`
+                }
+            }
         })}>
-            <IconButton
-                disableRipple
-                sx={{ bgcolor: 'primary.main', p: 1.2 }}
-                onClick={() => handleScroll(direction)}>
+            <IconButton>
                 <ArrowIcon color="inherit" direction={direction < 0 ? 'left' : 'right'} />
             </IconButton>
         </Box>
     )
 
     return (
-        <StylCategoryData ref={slideRef} {...rest}>
+        <StylCategoryData ref={scrollableRef} {...rest}>
             <Arrow direction={-1} />
             <Box>{loading ? <LoadingIndicator /> : allCategoryData}</Box>
             <Arrow direction={1} />
