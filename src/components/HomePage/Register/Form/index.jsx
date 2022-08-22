@@ -47,18 +47,21 @@ function Form() {
                 <TextField label="Email Address" name="email" type="email" />
                 <TextField label="Password" name="password" type="password" />
                 <SubmitButton loading={loading} reset={reset}>GET STARTED</SubmitButton>
-                <Snackbar
-                    onClose={handleSnackBarClose}
-                    autoHideDuration={6000}
-                    open={snackBarState.open}
-                    TransitionComponent={props => <Slide {...props} direction="up" />}
-                >
-                    <Alert
-                        variant="filled"
-                        severity={snackBarState.error ? 'error' : 'success'}>
-                        {snackBarState.message}
-                    </Alert>
-                </Snackbar>
+                {snackBarState.open && (
+                    <Snackbar
+                        open
+                        onClose={handleSnackBarClose}
+                        autoHideDuration={6000}
+                        TransitionComponent={props => <Slide {...props} direction="up" />}
+                    >
+                        <Alert
+                            variant="filled"
+                            severity={snackBarState.error ? 'error' : 'success'}>
+                            {snackBarState.message}
+                        </Alert>
+                    </Snackbar>
+                )
+                }
             </Stack>
 
         </Formik>
