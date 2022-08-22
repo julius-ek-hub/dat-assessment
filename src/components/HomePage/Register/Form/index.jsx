@@ -60,8 +60,7 @@ function Form() {
                             {snackBarState.message}
                         </Alert>
                     </Snackbar>
-                )
-                }
+                )}
             </Stack>
 
         </Formik>
